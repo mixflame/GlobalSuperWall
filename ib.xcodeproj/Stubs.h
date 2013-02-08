@@ -830,6 +830,7 @@
 -(IBAction) viewWillAppear:(id) animated;
 -(IBAction) load_messages;
 -(IBAction) new_message:(id) sender;
+-(IBAction) go_back:(id) sender;
 
 @end
 

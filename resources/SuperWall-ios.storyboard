@@ -79,7 +79,7 @@
                                     <action selector="load_wall:" destination="NCC-zi-BGc" eventType="touchUpInside" id="AOV-66-Kq0"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="localhost:3000" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="538-jo-dSX">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="globalchat2.net:9294" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="538-jo-dSX">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -102,11 +102,9 @@
                             <constraint firstItem="vFi-UF-yCL" firstAttribute="top" secondItem="Hhv-Vv-VET" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="0Q3-ea-B8i"/>
                             <constraint firstItem="3Ks-PT-DLB" firstAttribute="leading" secondItem="Z2V-Pz-CUg" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="5Nl-YQ-kCU"/>
                             <constraint firstAttribute="bottom" secondItem="3Ks-PT-DLB" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="D9N-tu-6xG"/>
-                            <constraint firstItem="Z2V-Pz-CUg" firstAttribute="baseline" secondItem="tYK-SC-cAB" secondAttribute="baseline" type="default" id="FFS-jj-1ng"/>
                             <constraint firstItem="oVS-kf-PIC" firstAttribute="leading" secondItem="vZX-YX-Dgw" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="GPy-fb-AXP"/>
                             <constraint firstItem="oVS-kf-PIC" firstAttribute="baseline" secondItem="538-jo-dSX" secondAttribute="baseline" type="default" id="Gze-Sm-edw"/>
                             <constraint firstAttribute="bottom" secondItem="Z2V-Pz-CUg" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="HrB-m9-rYV"/>
-                            <constraint firstItem="3Ks-PT-DLB" firstAttribute="baseline" secondItem="Z2V-Pz-CUg" secondAttribute="baseline" type="default" id="JbB-ju-uTr"/>
                             <constraint firstItem="Hhv-Vv-VET" firstAttribute="trailing" secondItem="vZX-YX-Dgw" secondAttribute="trailing" type="default" id="KqD-rg-o9u"/>
                             <constraint firstItem="538-jo-dSX" firstAttribute="top" secondItem="vZX-YX-Dgw" secondAttribute="top" constant="20" symbolic="YES" type="default" id="LCF-qv-ZOn"/>
                             <constraint firstAttribute="trailing" secondItem="vFi-UF-yCL" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="M7w-b6-1zH"/>
@@ -119,7 +117,6 @@
                             <constraint firstItem="538-jo-dSX" firstAttribute="leading" secondItem="oVS-kf-PIC" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="XSt-3W-H8a"/>
                             <constraint firstItem="tYK-SC-cAB" firstAttribute="top" secondItem="vFi-UF-yCL" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="YfM-AI-cHQ"/>
                             <constraint firstItem="Hhv-Vv-VET" firstAttribute="centerX" secondItem="Z2V-Pz-CUg" secondAttribute="centerX" type="default" id="Ztn-Sf-i1M"/>
-                            <constraint firstItem="3Ks-PT-DLB" firstAttribute="baseline" secondItem="tYK-SC-cAB" secondAttribute="baseline" type="default" id="bOV-bw-zOc"/>
                             <constraint firstAttribute="trailing" secondItem="538-jo-dSX" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="jef-cx-gqk"/>
                             <constraint firstItem="Hhv-Vv-VET" firstAttribute="leading" secondItem="vZX-YX-Dgw" secondAttribute="leading" type="default" id="rDY-EF-HYe"/>
                         </constraints>
@@ -154,6 +151,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="new_message:" destination="Qh6-h8-DkI" eventType="touchUpInside" id="paq-mb-nuN"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LXx-gV-BAd">
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -188,6 +188,22 @@
                                     <constraint firstItem="qHq-jp-qEL" firstAttribute="bottom" secondItem="sjH-qi-Sun" secondAttribute="bottom" type="default" id="uGu-yn-OHZ"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jun-93-Xsd">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="ONG-7o-lFs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="go_back:" destination="Qh6-h8-DkI" eventType="touchUpInside" id="vmx-ge-WSg"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -199,12 +215,15 @@
                             <constraint firstAttribute="bottom" secondItem="sjH-qi-Sun" secondAttribute="bottom" constant="152" id="SCO-RU-yw0"/>
                             <constraint firstAttribute="trailing" secondItem="LXx-gV-BAd" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Uzk-Hc-GWJ"/>
                             <constraint firstItem="LXx-gV-BAd" firstAttribute="leading" secondItem="7TG-md-bPO" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="WYN-8K-u9N"/>
+                            <constraint firstItem="Jun-93-Xsd" firstAttribute="leading" secondItem="XzW-dZ-LUu" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ZXP-tj-KDV"/>
                             <constraint firstItem="7TG-md-bPO" firstAttribute="leading" secondItem="XzW-dZ-LUu" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="btD-5h-UVK"/>
+                            <constraint firstAttribute="bottom" secondItem="Jun-93-Xsd" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="gGs-ZH-eqf"/>
                             <constraint firstItem="7TG-md-bPO" firstAttribute="baseline" secondItem="LXx-gV-BAd" secondAttribute="baseline" type="default" id="ito-D3-vzS"/>
                             <constraint firstItem="sjH-qi-Sun" firstAttribute="trailing" secondItem="XzW-dZ-LUu" secondAttribute="trailing" type="default" id="k2p-F9-xc7"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="message" destination="LXx-gV-BAd" id="SlF-G1-ql3"/>
                         <outlet property="messages_view" destination="qHq-jp-qEL" id="rvf-fF-OGI"/>
                     </connections>
                 </viewController>
@@ -217,8 +236,12 @@
         <class className="MessageListController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MessageListController.h"/>
             <relationships>
+                <relationship kind="action" name="go_back:"/>
                 <relationship kind="action" name="load_messages"/>
+                <relationship kind="action" name="new_message:"/>
+                <relationship kind="action" name="textFieldShouldReturn:"/>
                 <relationship kind="action" name="viewWillAppear:"/>
+                <relationship kind="outlet" name="message" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="messages_view" candidateClass="UITextView"/>
             </relationships>
         </class>

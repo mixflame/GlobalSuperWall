@@ -8,12 +8,21 @@ class WallListController < UIViewController
   outlet :server, UITextField
   outlet :topic, UITextField
 
+  def load_prefs
+    server.text = $prefs.stringForKey("server") || "globalchat2.net:9294"
+  end
+
+  def save_prefs
+    $prefs.setObject(server.text, :forKey => "server")
+  end
+
   def textFieldShouldReturn(textField)
     textField.resignFirstResponder
   end
 
   def viewWillAppear(animated)
     $wlc = self
+    load_prefs
     refresh_walls
     super(animated)
   end
@@ -41,9 +50,11 @@ class WallListController < UIViewController
   end
 
   def load_wall(sender)
+    save_prefs
     HTTP.get("http://#{server.text}/wall_messages?wall_id=#{$wall_id}") do |resp|
       break if resp.body.nil?
       $messages = JSON.parse(resp.body.to_str)
+      $server = server.text
       $app.switch_to_vc($app.load_vc("MessageList"))
     end
   end
